@@ -30,7 +30,7 @@ public class Duke {
                 Task t = new Task(command);
                 if ((arr[0]).equals("done")) {
                     int i = Integer.parseInt(arr[1]);
-                    t.markDone();
+                    list.get(i-1).markDone();
                     System.out.println("Nice! I've marked this as done:");
                     System.out.println("  [" + list.get(i - 1).getStatus() + "] " + list.get(i - 1));
                 } else {
