@@ -4,7 +4,7 @@ public class Task {
     protected String description;
     protected boolean isDone;
 
-    public Task(String description) {
+    public Task (String description) {
         this.description = description;
         this.isDone = false; //default not done
     }
@@ -13,7 +13,8 @@ public class Task {
      * Returns the status of the task. Depends on whether task isDone = true.
      * @return tick or cross
      */
-    public String getStatus() { return (isDone ? "✓" : "✗");
+    public String getStatus() {
+        return (isDone ? "✓" : "✗");
     }
 
     public void markDone() {
