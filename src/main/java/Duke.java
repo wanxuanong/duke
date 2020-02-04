@@ -56,6 +56,8 @@ public class Duke {
                     for (int i = 0; i < list.size(); i++) {
                         System.out.println((i + 1) + "." + list.get(i).toString());
                     }
+                } else if (command.equals("find")) {
+
                 } else if (command.equals("todo") || command.equals("deadline") || command.equals("event")) {
                     throw new DukeException("☹ OOPS!!! The description of a " + command + " cannot be empty.");
 
