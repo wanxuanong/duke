@@ -21,5 +21,9 @@ public class Task {
     public String toString() {
         return "[" + getStatus() + "] " + description;
     }
+
+    public String formatText() {
+        return "X | " + (this.isDone ? "1" : "0") + " | " + description;
+    }
 }
 

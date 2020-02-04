@@ -4,9 +4,14 @@ public class Deadline extends Task {
         super(description);
         this.by = by;
     }
+
     @Override
     public String toString() {
         return "[D]" + super.toString() + "(by: " + by + ")";
+    }
+
+    public String formatText() {
+        return "D | " + (this.isDone ? "1" : "0") + " | " + description + " | " + by;
     }
 }
 
