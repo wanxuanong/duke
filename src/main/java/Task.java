@@ -9,8 +9,11 @@ public class Task {
         this.isDone = false; //default not done
     }
 
-    public String getStatus() {
-        return (isDone ? "✓" : "✗");
+    /**
+     * Returns the status of the task. Depends on whether task isDone = true.
+     * @return tick or cross
+     */
+    public String getStatus() { return (isDone ? "✓" : "✗");
     }
 
     public void markDone() {
