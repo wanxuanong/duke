@@ -11,7 +11,7 @@ public class Event extends Task {
     }
 
     public String formatText() {
-        return "E | " + (this.isDone ? "1" : "0") + " | " + description + " | " + at;
+        return "E | " + (this.isDone ? "1" : "0") + " | " + description + " | " + at + "\n";
     }
 }
 

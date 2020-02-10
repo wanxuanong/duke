@@ -11,7 +11,7 @@ public class Deadline extends Task {
     }
 
     public String formatText() {
-        return "D | " + (this.isDone ? "1" : "0") + " | " + description + " | " + by;
+        return "D | " + (this.isDone ? "1" : "0") + " | " + description + " | " + by + "\n";
     }
 }
 
