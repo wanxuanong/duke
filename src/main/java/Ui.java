@@ -40,5 +40,10 @@ public class Ui {
         System.out.println("Got it. I've added this task:\n  " + task.toString() + "\n" +
                 "Now you have " + taskList.getListSize() + " tasks in the list.");
     }
+
+    public void printFileNotFoundError() {
+        System.out.println("File not found...");
+    }
+    
 }
 
