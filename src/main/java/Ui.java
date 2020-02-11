@@ -44,6 +44,5 @@ public class Ui {
     public void printFileNotFoundError() {
         System.out.println("File not found...");
     }
-    
 }
 
