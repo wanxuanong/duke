@@ -29,5 +29,9 @@ public class Task {
     public String formatText() {
         return "X | " + (this.isDone ? "1" : "0") + " | " + description;
     }
+
+    public boolean contains(String key) {
+        return this.description.contains(key);
+    }
 }
 

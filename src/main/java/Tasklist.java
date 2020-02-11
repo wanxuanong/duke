@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 // contains the task list e.g., it has operations to add/delete tasks in the list
@@ -25,6 +26,16 @@ public class TaskList {
 
     public void deleteTask(Task task) {
         list.remove(task);
+    }
+
+    public TaskList findMatching(String key) {
+        ArrayList<Task> results = new ArrayList<Task>();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).contains(key)) {
+                results.add(list.get(i));
+            }
+        }
+        return new TaskList(results);
     }
 }
 

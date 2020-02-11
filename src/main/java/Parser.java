@@ -41,6 +41,14 @@ public class Parser {
                     throw new DukeException("☹ OOPS!!! The description of an event cannot be empty.");
                 }
 
+            case "find":
+                if (inputArr.length != 1) {
+                    String key = inputArr[1];
+                    return new FindCommand(key);
+                } else {
+                    throw new DukeException("☹ OOPS!!! The description of a find cannot be empty.");
+                }
+
             default:
                 throw new DukeException("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
         }

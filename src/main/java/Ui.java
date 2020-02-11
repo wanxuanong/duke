@@ -27,6 +27,13 @@ public class Ui {
         }
     }
 
+    public void printMatchList(TaskList taskList) {
+        System.out.println("Here are the search results:");
+        for (int i = 0; i < taskList.getListSize(); i++) {
+            System.out.println((i + 1) + "." + taskList.getTask(i).toString());
+        }
+    }
+
     public void printDoneTask(Task task) {
         System.out.println("Nice! I've marked this as done:" + "\n  " + task.toString());
     }
