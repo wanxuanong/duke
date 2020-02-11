@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
+// deals with interactions with the user
 public class Ui {
     public Ui() {
-
     }
 
     public String input() {
@@ -33,7 +33,7 @@ public class Ui {
 
     public void printDeletedTask(Task task, TaskList taskList) {
         System.out.println("Noted. I've removed this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the list."););
+                "Now you have " + taskList.getListSize() + " tasks in the list.");
     }
 
     public void printAddedTask(Task task, TaskList taskList) {
@@ -43,6 +43,10 @@ public class Ui {
 
     public void printFileNotFoundError() {
         System.out.println("File not found...");
+    }
+
+    public void printError(String msg) {
+        System.out.println(msg);
     }
 }
 

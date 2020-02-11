@@ -1,13 +1,46 @@
 import java.io.IOException;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.lang.Integer.*;
 
 public class Duke {
-    static ArrayList<Task> list = new ArrayList<Task>(100);
+    private TaskList taskList;
+    private Storage storage;
+    private Ui ui;
+    static String path = "/Users/ongwanxuan/duke/src/main/java/tasks.txt";
+
+    public Duke(String path) throws IOException {
+        this.ui = new Ui();
+        this.storage = new Storage(path);
+        try {
+            this.taskList = new TaskList(storage.loadFile());
+        } catch (IOException e) {
+            ui.printFileNotFoundError();
+            taskList = new TaskList();
+        }
+    }
+
+    public void run() {
+        ui.intro();
+        boolean isExit = false; //default
+        while (!isExit) {
+            try {
+                String input = ui.input();
+                Command command = Parser.parse(input);
+                command.action(taskList, storage, ui);
+                isExit = command.isExit();
+            } catch (DukeException m) {
+                ui.printError(m.getMessage());
+            } catch (IOException e) {
+                ui.printFileNotFoundError();
+            }
+        }
+    }
+
+    public static void main(String[] args) throws IOException, DukeException {
+        new Duke(path).run();
+    }
+}
+
+    /**static ArrayList<Task> list = new ArrayList<Task>(100);
 
     public static void main(String[] args) throws IOException {
         System.out.println("Hello friend. What can I do for you? xD\n");
@@ -23,7 +56,7 @@ public class Duke {
             try {
                 fileContents(path, list);
             } catch (IOException e) {
-                System.out.println("File not found!!!");
+                System.out.println("Load failed.");
             }
         }
         while (sc.hasNextLine()) {
@@ -142,5 +175,4 @@ public class Duke {
         FileWriter fw = new FileWriter(path, true);
         fw.write(newText);
         fw.close();
-    }
-}
+    }**/
