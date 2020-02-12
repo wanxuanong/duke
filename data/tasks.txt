@@ -1,0 +1,10 @@
+D | 1 | sleep  | 2020-02-11
+E | 1 | eat  | 2020-02-25
+T | 0 | run
+T | 0 | drink
+T | 0 | eat bfast
+D | 0 | eat more  | 2020-12-31
+T | 0 | read book
+D | 0 | return book  | 2020-02-03
+T | 0 | borrow smth
+T | 0 | eat
