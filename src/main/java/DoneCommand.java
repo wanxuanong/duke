@@ -7,11 +7,11 @@ public class DoneCommand extends Command {
     }
 
     @Override
-    public void action(TaskList taskList, Storage storage, Ui ui) throws IOException {
+    public String action(TaskList taskList, Storage storage, Ui ui) throws IOException {
         Task task = taskList.getTask(idx - 1);
         task.markDone();
         storage.writeNew(taskList);
-        ui.printDoneTask(task);
+        return ui.printDoneTask(task);
     }
 }
 

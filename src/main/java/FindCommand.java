@@ -8,8 +8,8 @@ public class FindCommand extends Command {
     }
 
     @Override
-    public void action(TaskList taskList, Storage storage, Ui ui) throws IOException {
-        ui.printMatchList(taskList.findMatching(key));
+    public String action(TaskList taskList, Storage storage, Ui ui) throws IOException {
+        return ui.printMatchList(taskList.findMatching(key));
     }
 }
 

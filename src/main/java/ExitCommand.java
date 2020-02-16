@@ -7,7 +7,7 @@ public class ExitCommand extends Command {
     }
 
     @Override
-    public void action(TaskList taskList, Storage storage, Ui ui) throws IOException {
-        ui.exit();
+    public String action(TaskList taskList, Storage storage, Ui ui) throws IOException {
+        return ui.exit();
     }
 }

@@ -10,50 +10,52 @@ public class Ui {
         return sc.nextLine();
     }
 
-    public void intro() {
-        String intro = "Hello friend. What can I do for you? xD";
-        System.out.println(intro);
+    public String intro() {
+        String intro = "Hello Squarepants! What can I do for you? xD";
+        return intro;
     }
 
-    public void exit() {
-        String exit = "Bye!!! See ya again soon xD";
-        System.out.println(exit);
+    public String exit() {
+        String exit = "Bye Squarepants! See ya again soon xD";
+        return exit;
     }
 
-    public void printList(TaskList taskList) {
-        System.out.println("Here are the tasks in your list:");
+    public String printList(TaskList taskList) {
+        String msg = "Here are the tasks in your list: \n";
         for (int i = 0; i < taskList.getListSize(); i++) {
-            System.out.println((i + 1) + "." + taskList.getTask(i).toString());
+            msg += (i + 1) + "." + taskList.getTask(i).toString() + "\n";
         }
+        return msg;
     }
 
-    public void printMatchList(TaskList taskList) {
-        System.out.println("Here are the search results:");
+    public String printMatchList(TaskList taskList) {
+        String msg = "Here are the search results: \n";
         for (int i = 0; i < taskList.getListSize(); i++) {
-            System.out.println((i + 1) + "." + taskList.getTask(i).toString());
+            msg += (i + 1) + "." + taskList.getTask(i).toString() + "\n";
         }
+        return msg;
     }
 
-    public void printDoneTask(Task task) {
-        System.out.println("Nice! I've marked this as done:" + "\n  " + task.toString());
+    public String printDoneTask(Task task) {
+        return "Nice! I've marked this as done:" + "\n  " + task.toString();
     }
 
-    public void printDeletedTask(Task task, TaskList taskList) {
-        System.out.println("Noted. I've removed this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the list.");
+    public String printDeletedTask(Task task, TaskList taskList) {
+        return "Noted. I've removed this task:\n  " + task.toString() + "\n" +
+                "Now you have " + taskList.getListSize() + " tasks in the list.";
     }
 
-    public void printAddedTask(Task task, TaskList taskList) {
-        System.out.println("Got it. I've added this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the list.");
+    public String printAddedTask(Task task, TaskList taskList) {
+        return "Got it. I've added this task:\n  " + task.toString() + "\n" +
+                "Now you have " + taskList.getListSize() + " tasks in the list.";
     }
 
-    public void printFileNotFoundError() {
-        System.out.println("File not found...");
+    public String printFileNotFoundError() {
+        return "File not found under the sea...";
     }
 
-    public void printError(String msg) {
-        System.out.println(msg);
+    public String printError(String msg) {
+        return msg;
     }
 }
 

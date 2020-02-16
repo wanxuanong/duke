@@ -6,7 +6,8 @@ public class Command {
         return false;
     }
 
-    public void action(TaskList taskList, Storage storage, Ui ui) throws IOException {
+    public String action(TaskList taskList, Storage storage, Ui ui) throws IOException {
+        return "";
     }
 }
 

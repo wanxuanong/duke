@@ -7,10 +7,10 @@ public class AddCommand extends Command {
     }
 
     @Override
-    public void action(TaskList taskList, Storage storage, Ui ui) throws IOException {
+    public String action(TaskList taskList, Storage storage, Ui ui) throws IOException {
         taskList.addTask(task);
         storage.writeToOld(task.formatText());
-        ui.printAddedTask(task, taskList);
+        return ui.printAddedTask(task, taskList);
     }
 }
 
