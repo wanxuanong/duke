@@ -28,7 +28,7 @@ public class Ui {
     }
 
     public String printList(TaskList taskList) {
-        String msg = "Here are your tasks in the spider verse: \n";
+        String msg = "Here are your tasks in the Spiderverse: \n";
         for (int i = 0; i < taskList.getListSize(); i++) {
             msg += (i + 1) + "." + taskList.getTask(i).toString() + "\n";
         }
@@ -62,16 +62,16 @@ public class Ui {
 
     public String printDeletedTask(Task task, TaskList taskList) {
         return "Noted! I've removed this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the spider verse.";
+                "Now you have " + taskList.getListSize() + " tasks in the Spiderverse.";
     }
 
     public String printAddedTask(Task task, TaskList taskList) {
         return "Got it. I've added this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the spider verse.";
+                "Now you have " + taskList.getListSize() + " tasks in the Spiderverse.";
     }
 
     public String printFileNotFoundError() {
-        return "File not found in this spiderverse...";
+        return "File not found in this Spiderverse...";
     }
 
     /**
