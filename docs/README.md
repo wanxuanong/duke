@@ -1,5 +1,5 @@
 # User Guide
-'Into the spider verse!'
+'Into the spider verse!' is a personal task manager that follows the theme of Spiderman.
 ## Features 
 
 ### Feature 1 
