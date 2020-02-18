@@ -1,9 +1,11 @@
+package tasks;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 // contains the task list e.g., it has operations to add/delete tasks in the list
 public class TaskList {
-    protected ArrayList<Task> list;
+    public ArrayList<Task> list;
 
     public TaskList() {
         this.list = new ArrayList<Task>();

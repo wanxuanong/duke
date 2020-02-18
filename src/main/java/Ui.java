@@ -1,5 +1,9 @@
+package ui;
+
+import tasks.Task;
+import tasks.TaskList;
+
 import java.util.Scanner;
-import java.util.ArrayList;
 
 // deals with interactions with the user
 public class Ui {

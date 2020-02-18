@@ -1,3 +1,9 @@
+package parser;
+
+import commands.*;
+import tasks.*;
+import exceptions.DukeException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
