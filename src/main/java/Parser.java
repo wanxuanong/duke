@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 // deals with making sense of the user command
 public class Parser {
     public static Command parse(String input) throws DukeException {
@@ -11,18 +14,36 @@ public class Parser {
                 return new ListCommand();
 
             case "done":
-                int i = Integer.parseInt(inputArr[1]);
-                return new DoneCommand(i);
+                if (inputArr.length !=1) {
+                    if (isNumber(inputArr[1])) {
+                        int i = Integer.parseInt(inputArr[1]);
+                        return new DoneCommand(i);
+                    } else {
+                        ArrayList<Integer> idxList = new ArrayList<>();
+                        String[] idxArr = inputArr[1].split(" ");
+                        for (String id : idxArr) {
+                            int idx = Integer.parseInt(id);
+                            idxList.add(idx);
+                        }
+                        return new DoneSomeCommand(idxList);
+                    }
+                } else {
+                    throw new DukeException("Parker! Try: done {INDEX} or done {INDEX1 INDEX2 ...}");
+                }
 
             case "delete":
-                int j = Integer.parseInt(inputArr[1]);
-                return new DeleteCommand(j);
+                if (inputArr.length != 1) {
+                    int j = Integer.parseInt(inputArr[1]);
+                    return new DeleteCommand(j);
+                } else {
+                    throw new DukeException("Parker.. Try: delete {INDEX}");
+                }
 
             case "todo":
                 if (inputArr.length != 1) {
                     return new AddCommand(new Todo(inputArr[1]));
                 } else {
-                    throw new DukeException("☹ OOPS!!! The description of a todo cannot be empty.");
+                    throw new DukeException("Parker.. Try: todo {DESCRIPTION}");
                 }
 
             case "deadline":
@@ -30,7 +51,7 @@ public class Parser {
                     String[] byArr = inputArr[1].split("/by ");
                     return new AddCommand(new Deadline(byArr[0], byArr[1]));
                 } else {
-                    throw new DukeException("☹ OOPS!!! The description of a deadline cannot be empty.");
+                    throw new DukeException("Parker.. Try: deadline {DESCRIPTION} /by YYYY-MM-DD");
                 }
 
             case "event":
@@ -38,7 +59,7 @@ public class Parser {
                     String[] atArr = inputArr[1].split("/at ");
                     return new AddCommand(new Event(atArr[0], atArr[1]));
                 } else {
-                    throw new DukeException("☹ OOPS!!! The description of an event cannot be empty.");
+                    throw new DukeException("Parker.. Try: event {DESCRIPTION} /at YYYY-MM-DD");
                 }
 
             case "find":
@@ -46,11 +67,23 @@ public class Parser {
                     String key = inputArr[1];
                     return new FindCommand(key);
                 } else {
-                    throw new DukeException("☹ OOPS!!! The description of a find cannot be empty.");
+                    throw new DukeException("Parker.. Try: find {KEYWORD}");
                 }
 
             default:
-                throw new DukeException("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
+                throw new DukeException("You are not making sense, Parker!!! >:(");
+        }
+    }
+
+    public static boolean isNumber(String s) {
+        if (s == null) {
+            return false;
+        }
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
     }
 }

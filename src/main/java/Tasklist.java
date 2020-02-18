@@ -28,6 +28,15 @@ public class TaskList {
         list.remove(task);
     }
 
+    public TaskList doneSpecificTasks(ArrayList<Integer> idxList) {
+        ArrayList<Task> doneList = new ArrayList<>();
+        for (int i = 0; i < idxList.size(); i++) {
+            getTask(idxList.get(i) - 1).markDone();
+            doneList.add(getTask(idxList.get(i) - 1));
+        }
+        return new TaskList(doneList);
+    }
+
     public TaskList findMatching(String key) {
         ArrayList<Task> results = new ArrayList<Task>();
         for (int i = 0; i < list.size(); i++) {

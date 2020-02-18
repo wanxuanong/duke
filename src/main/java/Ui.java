@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 // deals with interactions with the user
 public class Ui {
@@ -11,17 +12,17 @@ public class Ui {
     }
 
     public String intro() {
-        String intro = "Hello Squarepants! What can I do for you? xD";
+        String intro = "Nice to see you, Parker! What do you need?";
         return intro;
     }
 
     public String exit() {
-        String exit = "Bye Squarepants! See ya again soon xD";
+        String exit = "Bye Parker... I love you 3000 <3";
         return exit;
     }
 
     public String printList(TaskList taskList) {
-        String msg = "Here are the tasks in your list: \n";
+        String msg = "Here are your tasks in the spider verse: \n";
         for (int i = 0; i < taskList.getListSize(); i++) {
             msg += (i + 1) + "." + taskList.getTask(i).toString() + "\n";
         }
@@ -37,21 +38,29 @@ public class Ui {
     }
 
     public String printDoneTask(Task task) {
-        return "Nice! I've marked this as done:" + "\n  " + task.toString();
+        return "Well done! I've marked this as done:" + "\n" + task.toString();
+    }
+
+    public String printSpecificDoneTasks(TaskList taskList) {
+        String msg = "Well done! I've marked these tasks as done:\n";
+        for (int i = 0; i < taskList.getListSize(); i++) {
+            msg += (i + 1) + "." + taskList.getTask(i).toString() + "\n";
+        }
+        return msg;
     }
 
     public String printDeletedTask(Task task, TaskList taskList) {
-        return "Noted. I've removed this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the list.";
+        return "Noted! I've removed this task:\n  " + task.toString() + "\n" +
+                "Now you have " + taskList.getListSize() + " tasks in the spider verse.";
     }
 
     public String printAddedTask(Task task, TaskList taskList) {
         return "Got it. I've added this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the list.";
+                "Now you have " + taskList.getListSize() + " tasks in the spider verse.";
     }
 
     public String printFileNotFoundError() {
-        return "File not found under the sea...";
+        return "File not found in this spiderverse...";
     }
 
     public String printError(String msg) {

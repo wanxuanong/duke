@@ -1,11 +1,12 @@
-D | 1 | sleep  | 2020-02-11
 T | 1 | drink
-T | 0 | eat bfast
-D | 1 | eat more  | 2020-12-31
-D | 0 | return book  | 2020-02-03
-T | 0 | borrow smth
+T | 1 | eat bfast
+D | 1 | return book  | 2020-02-03
+T | 1 | borrow smth
 T | 1 | eat
 T | 1 | read book
-E | 0 | ihg  | 2020-09-10
-E | 0 | project meeting  | 2020-02-17
-T | 0 | drink water
+E | 1 | ihg  | 2020-09-10
+E | 1 | project meeting  | 2020-02-17
+T | 1 | drink water
+T | 1 | running
+D | 1 | essay  | 2020-02-17
+T | 1 | sit

@@ -94,12 +94,11 @@ public class Duke {
     public String getResponse(String input) {
         try {
             Command command = Parser.parse(input);
-            /**if (command.equals("bye")) {
+            if (input.equals("bye")) {
                 Executors.newSingleThreadScheduledExecutor().schedule(
-                        () -> System.exit(0), 1, TimeUnit.SECONDS);**/
-            return command.action(taskList, storage, ui);
-        }
-            catch (IOException | DukeException e) {
+                        () -> System.exit(0), 500, TimeUnit.MILLISECONDS);
+            } return command.action(taskList, storage, ui);
+        } catch (IOException | DukeException e) {
             return e.getMessage();
         }
     }
