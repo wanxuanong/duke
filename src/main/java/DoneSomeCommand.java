@@ -7,6 +7,9 @@ import tasks.TaskList;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Command that marks a few tasks as done at the same time.
+ */
 public class DoneSomeCommand extends Command {
     private ArrayList<Integer> idxList;
 

@@ -7,8 +7,16 @@ import exceptions.DukeException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-// deals with making sense of the user command
+/**
+ * Parser deals with making sense of the user inputs.
+ */
 public class Parser {
+    /**
+     * Parses the user input and tag it to the respective command.
+     * @param  input User input.
+     * @return Appropriate command that executes the input.
+     * @throws DukeException thrown when input is unknown to Duke.
+     */
     public static Command parse(String input) throws DukeException {
         String[] inputArr = input.split(" ", 2);
         String type = inputArr[0];
@@ -81,6 +89,11 @@ public class Parser {
         }
     }
 
+    /**
+     * Returns whether the String is an Integer.
+     * @param s Input string.
+     * @return true if Integer, false if not.
+     */
     public static boolean isNumber(String s) {
         if (s == null) {
             return false;

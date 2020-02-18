@@ -8,7 +8,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// deals with loading tasks from the file and saving tasks in the file
+/**
+ * Storage deals with loading tasks from the file and saving tasks in the file.
+ */
+
 public class Storage {
     protected String path;
 
@@ -16,6 +19,11 @@ public class Storage {
         this.path = path;
     }
 
+    /**
+     * Loads contents in text file into TaskList.
+     * @return TaskList for Duke.
+     * @throws IOException thrown when error encountered.
+     */
     public ArrayList<Task> loadFile() throws IOException {
         File f = new File(path); //create a file for the given file path
         ArrayList<Task> list = new ArrayList<Task>();
@@ -56,6 +64,11 @@ public class Storage {
         return list;
     }
 
+    /**
+     * Writes a new ArrayList of tasks.
+     * @param taskList List of tasks for Duke.
+     * @throws IOException thrown when error is encountered.
+     */
     public void writeNew(TaskList taskList) throws IOException {
         FileWriter fw = new FileWriter(path);
         for (Task task : taskList.list) {
@@ -64,6 +77,11 @@ public class Storage {
         fw.close();
     }
 
+    /**
+     * Writes to the old ArrayList of tasks.
+     * @param newText New task added.
+     * @throws IOException thrown when error is encountered.
+     */
     public void writeToOld(String newText) throws IOException {
         FileWriter fw = new FileWriter(path, true);
         fw.write(newText);

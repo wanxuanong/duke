@@ -3,6 +3,9 @@ package tasks;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 
+/**
+ * An Event Task that takes in time.
+ */
 public class Event extends Task {
     protected LocalDate localDate;
     public Event(String description, String localDate) {

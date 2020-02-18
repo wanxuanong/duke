@@ -6,6 +6,9 @@ import ui.Ui;
 import tasks.TaskList;
 import java.io.IOException;
 
+/**
+ * Command that marks a task as done with a tick.
+ */
 public class DoneCommand extends Command {
     protected int idx;
     public DoneCommand(int idx) {

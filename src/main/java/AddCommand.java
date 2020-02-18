@@ -7,6 +7,9 @@ import tasks.TaskList;
 
 import java.io.IOException;
 
+/**
+ * Command that adds a task to the TaskList.
+ */
 public class AddCommand extends Command {
     protected Task task;
     public AddCommand(Task task) {

@@ -17,7 +17,9 @@ import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * Duke is a chat bot that manages your tasks.
+ */
 public class Duke {
     private TaskList taskList;
     private Storage storage;
@@ -32,7 +34,9 @@ public class Duke {
     private Image user = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
     private Image duke = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
 
-
+    /**
+     * Creates a Duke object and initializes Ui, Storage and TaskList objects.
+     */
     public Duke() {
         this.ui = new Ui();
         this.storage = new Storage(path);
@@ -87,8 +91,9 @@ public class Duke {
 
 
     /**
-     * You should have your own function to generate a response to user input.
-     * Replace this stub with your completed method.
+     * Returns Duke's response in the GUI when user's input is parsed.
+     * @param input User's input.
+     * @return Duke's response.
      */
     public String getResponse(String input) {
         try {

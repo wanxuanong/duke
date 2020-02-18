@@ -3,6 +3,9 @@ package tasks;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 
+/**
+ * A Deadline Task that takes in time.
+ */
 public class Deadline extends Task {
     protected LocalDate localDate;
     public Deadline(String description, String localDate) {

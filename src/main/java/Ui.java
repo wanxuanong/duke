@@ -5,7 +5,9 @@ import tasks.TaskList;
 
 import java.util.Scanner;
 
-// deals with interactions with the user
+/**
+ * Ui deals with interactions with the user.
+ */
 public class Ui {
     public Ui() {
     }
@@ -33,6 +35,11 @@ public class Ui {
         return msg;
     }
 
+    /**
+     * Displays list of tasks that contains keyword.
+     * @param taskList resulting TaskList
+     * @return resulting TaskList in string
+     */
     public String printMatchList(TaskList taskList) {
         String msg = "Here are the search results: \n";
         for (int i = 0; i < taskList.getListSize(); i++) {
@@ -67,6 +74,11 @@ public class Ui {
         return "File not found in this spiderverse...";
     }
 
+    /**
+     * Displays message when an error is encountered.
+     * @param msg Error message.
+     * @return Error message.
+     */
     public String printError(String msg) {
         return msg;
     }

@@ -6,6 +6,9 @@ import ui.Ui;
 import tasks.TaskList;
 import java.io.IOException;
 
+/**
+ * Command that finds tasks consisting of given keyword.
+ */
 public class FindCommand extends Command {
     protected String key;
 
