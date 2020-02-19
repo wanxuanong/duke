@@ -61,4 +61,5 @@ Command Format: `list`
 You can exit and close the Spiderverse window.
 
 Command Format: `bye`
+
 ![Exiting](./images/bye.png)
