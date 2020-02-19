@@ -1,3 +1,1 @@
-T | 0 | buy groceries
-D | 1 | essay  | 2020-03-01
-E | 1 | meeting  | 2020-02-25
+E | 0 | dinner  | 2020-03-01T21:00

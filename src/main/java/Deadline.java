@@ -4,10 +4,11 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 
 /**
- * A Deadline Task that takes in time.
+ * A Deadline Task that takes in date.
  */
 public class Deadline extends Task {
     protected LocalDate localDate;
+
     public Deadline(String description, String localDate) {
         super(description);
         this.localDate = LocalDate.parse(localDate);

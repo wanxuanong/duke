@@ -9,6 +9,8 @@ Command Format:
 1. Words in `UPPER_CASE` are parameters entered by you.
 2. For parameter `INDEX`, enter a integer corresponding to the task's index in the list.
 
+
+![caption23](./images/add.png)
 ## Features 
 
 ### Feature 1 - Add task
