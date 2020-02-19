@@ -9,8 +9,6 @@ Command Format:
 1. Words in `UPPER_CASE` are parameters entered by you.
 2. For parameter `INDEX`, enter a integer corresponding to the task's index in the list.
 
-
-![caption23](./images/add.png)
 ## Features 
 
 ### Feature 1 - Add task
@@ -24,7 +22,8 @@ Command Format:
 2. `deadline DESCRIPTION /by YYYY-MM-DD` (eg. deadline essay /by 2020-03-01)
 3. `event DESCRIPTION /at YYYY-MM-DD` (eg. event meeting /at 2020-02-25)
 
-insert png!!
+![Adding tasks](./images/add.png)
+
 
 ### Feature 2 - Delete task
 You can remove a task from the list.

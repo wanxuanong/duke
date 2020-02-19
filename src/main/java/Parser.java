@@ -64,7 +64,7 @@ public class Parser {
             case "deadline":
                 if (inputArray.length != 1) {
                     String[] byArray = inputArray[1].split("/by ");
-                    return new AddCommand(new Deadline(byArray[0], byArray[1]));
+                    return new AddCommand(new Deadline(byArray[0].trim(), byArray[1]));
                 } else {
                     throw new DukeException("Parker.. Try: deadline {DESCRIPTION} /by YYYY-MM-DD");
                 }
@@ -73,7 +73,7 @@ public class Parser {
                 if (inputArray.length != 1) {
                     String[] atArray = inputArray[1].split("/at ");
                     String[] dateTimeArray = atArray[1].split(" ");
-                    return new AddCommand(new Event(atArray[0], dateTimeArray[0], dateTimeArray[1]));
+                    return new AddCommand(new Event(atArray[0].trim(), dateTimeArray[0], dateTimeArray[1]));
                 } else {
                     throw new DukeException("Parker.. Try: event {DESCRIPTION} /at YYYY-MM-DD HHmm");
                 }

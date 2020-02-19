@@ -1,8 +1,9 @@
-package duke.storage;
+package storage;
 
-import duke.tasks.*;
+import tasks.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,40 +27,46 @@ public class Storage {
      */
     public ArrayList<Task> loadFile() throws IOException {
         File f = new File(path); //create a file for the given file path
+        f.getParentFile().mkdir();
         ArrayList<Task> list = new ArrayList<Task>();
-        Scanner sc = new Scanner(f);
-        while (sc.hasNext()) {
-            String s = sc.nextLine();
-            String[] arr = s.split(" [|] ");
-            String type = arr[0];
-            switch(type) {
-                case "T":
-                    Todo t1 = new Todo(arr[2]);
-                    if (arr[1].equals("1")) {
-                        t1.markDone();
-                    }
-                    list.add(t1);
-                    break;
 
-                case "D":
-                    Deadline d1 = new Deadline(arr[2], arr[3]);
-                    if (arr[1].equals("1")) {
-                        d1.markDone();
-                    }
-                    list.add(d1);
-                    break;
+        try {
+            Scanner sc = new Scanner(f);
+            while (sc.hasNext()) {
+                String s = sc.nextLine();
+                String[] taskArray = s.split(" \\| ");
+                String type = taskArray[0];
+                switch (type) {
+                    case "T":
+                        Todo t1 = new Todo(taskArray[2]);
+                        if (taskArray[1].equals("1")) {
+                            t1.markDone();
+                        }
+                        list.add(t1);
+                        break;
 
-                case "E":
-                    Event e1 = new Event(arr[2], arr[3]);
-                    if (arr[1].equals("1")) {
-                        e1.markDone();
-                    }
-                    list.add(e1);
-                    break;
+                    case "D":
+                        Deadline d1 = new Deadline(taskArray[2], taskArray[3]);
+                        if (taskArray[1].equals("1")) {
+                            d1.markDone();
+                        }
+                        list.add(d1);
+                        break;
 
-                default:
-                    break;
+                    case "E":
+                        Event e1 = new Event(taskArray[2], taskArray[3], taskArray[4]);
+                        if (taskArray[1].equals("1")) {
+                            e1.markDone();
+                        }
+                        list.add(e1);
+                        break;
+
+                    default:
+                        break;
+                }
             }
+        } catch (FileNotFoundException e) {
+            f.createNewFile();
         }
         return list;
     }
