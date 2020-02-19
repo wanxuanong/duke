@@ -11,6 +11,7 @@ import java.io.IOException;
  */
 public class DoneCommand extends Command {
     protected int index;
+
     public DoneCommand(int index) {
         this.index = index;
     }

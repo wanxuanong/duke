@@ -103,7 +103,8 @@ public class Duke {
             if (input.equals("bye")) {
                 Executors.newSingleThreadScheduledExecutor().schedule(
                         () -> System.exit(0), 500, TimeUnit.MILLISECONDS);
-            } return command.action(taskList, storage, ui);
+            }
+            return command.action(taskList, storage, ui);
         } catch (IOException | DukeException e) {
             return e.getMessage();
         }

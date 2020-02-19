@@ -20,8 +20,8 @@ public class Deadline extends Task {
     }
 
     public String formatText() {
-        return "D | " + (this.isDone ? "1" : "0") + " | " + description + " | " +
-                        localDate + "\n";
+        return "D | " + (this.isDone ? "1" : "0") + " | " + description + " | "
+                        + localDate + "\n";
     }
 }
 

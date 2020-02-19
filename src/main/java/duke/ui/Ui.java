@@ -51,6 +51,11 @@ public class Ui {
         return "Well done! I've marked this as done:" + "\n" + task.toString();
     }
 
+    /**
+     * Displays list of tasks completed.
+     * @param taskList TaskList of tasks done.
+     * @return taskList in String.
+     */
     public String printSpecificDoneTasks(TaskList taskList) {
         String message = "Well done! I've marked these tasks as done:\n";
         for (int i = 0; i < taskList.getListSize(); i++) {
@@ -60,13 +65,13 @@ public class Ui {
     }
 
     public String printDeletedTask(Task task, TaskList taskList) {
-        return "Noted! I've removed this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the Spiderverse.";
+        return "Noted! I've removed this task:\n  " + task.toString() + "\n"
+                        + "Now you have " + taskList.getListSize() + " tasks in the Spiderverse.";
     }
 
     public String printAddedTask(Task task, TaskList taskList) {
-        return "Got it. I've added this task:\n  " + task.toString() + "\n" +
-                "Now you have " + taskList.getListSize() + " tasks in the Spiderverse.";
+        return "Got it. I've added this task:\n  " + task.toString() + "\n"
+                        + "Now you have " + taskList.getListSize() + " tasks in the Spiderverse.";
     }
 
     public String printFileNotFoundError() {

@@ -28,7 +28,7 @@ public class Parser {
         assert input.length() != 0 : "Error: User input not found.";
         String[] inputArray = input.split(" ", 2);
         String type = inputArray[0];
-        switch(type) {
+        switch (type) {
             case "bye":
                 return new ExitCommand();
 
@@ -36,7 +36,7 @@ public class Parser {
                 return new ListCommand();
 
             case "done":
-                if (inputArray.length !=1) {
+                if (inputArray.length != 1) {
                     if (isNumber(inputArray[1])) {
                         int doneID = Integer.parseInt(inputArray[1]);
                         return new DoneCommand(doneID);
