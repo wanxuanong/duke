@@ -11,4 +11,3 @@ public class TodoTest {
         assertEquals(output1, task.formatText());
     }
 }
-
