@@ -26,9 +26,7 @@ public class Event extends Task {
             throw new DukeException("Parker.. Try: event {DESCRIPTION} /at YYYY-MM-DD HH:mm");
         }
     }
-
-
-
+    
     @Override
     public String toString() {
         return "[E]" + super.toString() + " (at: " +
