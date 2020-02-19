@@ -1,9 +1,11 @@
 package tasks;
 
+import exceptions.DukeException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalTime;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 /**
  * An Event Task that takes in date and time.
@@ -15,11 +17,16 @@ public class Event extends Task {
     String inputTimePattern = "HH:mm";
     DateTimeFormatter inputTimeFormatter = DateTimeFormatter.ofPattern(inputTimePattern);
 
-    public Event(String description, String localDate, String localTime) {
+    public Event(String description, String localDate, String localTime) throws DukeException {
         super(description);
-        this.localDate = LocalDate.parse(localDate);
-        this.localTime = LocalTime.parse(localTime, inputTimeFormatter);
+        try {
+            this.localDate = LocalDate.parse(localDate);
+            this.localTime = LocalTime.parse(localTime, inputTimeFormatter);
+        } catch (DateTimeParseException e) {
+            throw new DukeException("Parker.. Try: event {DESCRIPTION} /at YYYY-MM-DD HH:mm");
+        }
     }
+
 
 
     @Override

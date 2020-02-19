@@ -75,7 +75,7 @@ public class Parser {
                     String[] dateTimeArray = atArray[1].split(" ");
                     return new AddCommand(new Event(atArray[0].trim(), dateTimeArray[0], dateTimeArray[1]));
                 } else {
-                    throw new DukeException("Parker.. Try: event {DESCRIPTION} /at YYYY-MM-DD HHmm");
+                    throw new DukeException("Parker.. Try: event {DESCRIPTION} /at YYYY-MM-DD HH:mm");
                 }
 
             case "find":
