@@ -1,6 +1,6 @@
-import tasks.Task;
-import tasks.Event;
-import exceptions.DukeException;
+import duke.tasks.Task;
+import duke.tasks.Event;
+import duke.exceptions.DukeException;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,8 +13,7 @@ public class EventTest {
             assertEquals(output, task.toString());
             String output1 = "E | 0 | test | 2020-01-01 | 23:59\n";
             assertEquals(output1, task.formatText());
-        } catch (DukeException e) {
-
+        } catch (DukeException ignored) {
         }
     }
 }
